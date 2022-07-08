@@ -1,12 +1,11 @@
 
-let inputName = document.querySelector('#name-input');
-inputName.addEventListener('input', onInputChange);
+let input = document.getElementById("name-input");
+let nameOutput = document.getElementById("name-output");
 
-let outputName = document.querySelector('#name-output');
-
-function onInputChange(event) {
-  inputName = event.currentTarget.value;
-  console.log(inputName);
-
-  inputName !== ' ' ? (outputName.innerText = inputName.trim()) : "Anonymous";
+input.oninput = function () {
+    if (input.value === '') {
+       nameOutput.innerHTML = 'Anonymous';
+    } else{
+    nameOutput.innerHTML = input.value;
+    }
 }
