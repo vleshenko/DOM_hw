@@ -10,15 +10,15 @@ const ingredients = [
 ];
 
 
-let ulList = document.getElementById("ingredients");
-const foodIngredients = ingredients.forEach(ingredient => {
-  let items = document.createElement("li");
-  items.innerHTML = ingredient;
-  ulList.append(items);
-  
-});
+const ulList = document.querySelector("#ingredients");
+   const addAllLi = ingredients.map(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    li.classList.add("item");
+    return li;
+    });
+   ulList.append(...addAllLi);
 
-console.log(foodIngredients);
 
 
 
